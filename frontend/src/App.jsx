@@ -3,6 +3,8 @@ import { useDropzone } from 'react-dropzone';
 import { UploadCloud, FileText, CheckCircle, AlertTriangle, ShieldCheck } from 'lucide-react';
 import axios from 'axios';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+
 function App() {
   const [estimate, setEstimate] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -10,7 +12,7 @@ function App() {
 
   const pollStatus = async (id) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/api/v1/estimates/${id}`);
+      const res = await axios.get(`${API_BASE}/api/v1/estimates/${id}`);
       const data = res.data;
       if (data.status === 'completed') {
         setEstimate({
@@ -53,7 +55,7 @@ function App() {
     formData.append('impact_zone', impactZone);
 
     try {
-      const res = await axios.post('http://127.0.0.1:8000/api/v1/estimates/upload', formData);
+      const res = await axios.post(`${API_BASE}/api/v1/estimates/upload`, formData);
       pollStatus(res.data.id);
     } catch (err) {
       console.error(err);
