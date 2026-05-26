@@ -31,6 +31,9 @@ function App() {
       } else if (data.status === 'failed_extraction') {
         alert('Failed to extract data from the PDF.');
         setLoading(false);
+      } else if (data.status === 'failed_processing') {
+        alert('Failed to process and validate estimate with AI.');
+        setLoading(false);
       } else {
         setTimeout(() => pollStatus(id), 2000);
       }
