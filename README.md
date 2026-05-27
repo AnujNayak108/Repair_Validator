@@ -44,7 +44,7 @@ This application is built with a modern, modular architecture:
    ```
 3. Add your Gemini API key to `backend/.env`:
    ```env
-   GEMINI_API_KEY=your_api_key_here
+   MISTRAL_API_KEY=your_api_key_here
    DATABASE_URL=sqlite:///./sql_app.db
    ```
 4. Run the FastAPI server:
