@@ -296,6 +296,14 @@ function App() {
             </AnimatePresence>
           </div>
         </motion.div>
+        <footer className="mt-12 text-center text-neutral-500">
+          <p className="text-xs">
+            built by <span> </span> 
+            <a href="https://github.com/AnujNayak108" target="_blank" rel="noopener noreferrer" className="text-indigo-400 font-semibold hover:underline">
+              Anuj Nayak
+            </a>
+          </p>
+        </footer>
       </motion.div>
     </div>
   );
